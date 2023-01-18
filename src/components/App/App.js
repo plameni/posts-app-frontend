@@ -1,13 +1,11 @@
 import "./App.css";
-import Post from './../general/Post/Post';
+import PostList from "./../presentation/PostList/PostList";
 
 const App = () => {
   return (
     <div>
       <h2>This is first React App</h2>
-      <p>This is posts app. Posts:</p>
-      <Post />
-      <Post></Post>
+      <PostList />
     </div>
   );
 };
