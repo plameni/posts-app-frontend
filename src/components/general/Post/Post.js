@@ -1,9 +1,11 @@
-import "./Post.css";
+import "./Post.scss";
 import { useState } from "react";
 
 const Post = (props) => {
 
   const [title, setTitle] = useState(props.postData.title); 
+  const postHeight = '200px';
+  const borderRadius = '6px'; 
 
   const buttonClickHandler = () => {
     setTitle('READ!');  
@@ -11,7 +13,7 @@ const Post = (props) => {
   }
 
   return (
-    <div className="post-div">
+    <div className="post-div" style={ { height: postHeight, borderRadius: borderRadius } }>
       <h4> {title} </h4>
       <p> {props.postData.body} </p>
       <small>{props.postData.userId}</small> <small> {props.postData.id} </small>

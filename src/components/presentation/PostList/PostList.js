@@ -24,18 +24,42 @@ const PostList = () => {
     },
   ];
 
+  //const posts = [];
+
+  // let contentToRender; 
+  // if (posts.length === 0) {
+  //   contentToRender = <h3>There are no posts</h3>;
+  // }
+  // else {
+  //   contentToRender = posts.map(p => <Card><Post postData={p} /></Card>)
+  // }
+
   return (
     <div>
       <h3>Post list:</h3>
-      <Card>
-        <Post postData={posts[0]} />
-      </Card>
-      <Card>
-        <Post postData={posts[1]} />
-      </Card>
-      <Card>
-        <Post postData={posts[2]} />
-      </Card>
+
+      {/* { contentToRender } */}
+
+      { posts.length === 0 ? <h3>There are no posts</h3> : '' }
+      {
+        posts.map(p => <Card><Post postData={p} /></Card>)
+      }
+
+      {/* {
+        posts.length === 0 && <h3>There are no posts!</h3> ? '' : posts.map(p => <Card><Post postData={p}/></Card>)
+      } */}
+
+      {/* { posts.length === 0 ? <h3>There are no posts</h3> : posts.map(p => <Card>
+          <Post postData={p}></Post>
+        </Card>) } */}
+
+
+      {/* forEach ne prolazi */}
+      {/* {
+        posts.forEach(p => return (<Card>
+          <Post postData={p}></Post>
+        </Card>)
+      } */}
     </div>
   );
 };
