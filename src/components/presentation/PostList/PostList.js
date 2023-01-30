@@ -1,5 +1,6 @@
 import Post from "./../../general/Post/Post";
 import Card from "./../../general/Card/Card";
+import AddEditPost from "./../../general/AddEditPost/AddEditPost";
 
 const PostList = () => {
   const posts = [
@@ -36,13 +37,14 @@ const PostList = () => {
 
   return (
     <div>
+      <AddEditPost />
       <h3>Post list:</h3>
 
       {/* { contentToRender } */}
 
       { posts.length === 0 ? <h3>There are no posts</h3> : '' }
       {
-        posts.map(p => <Card><Post postData={p} /></Card>)
+        posts.map(p => <Card key={p.id}><Post postData={p} /></Card>)
       }
 
       {/* {
