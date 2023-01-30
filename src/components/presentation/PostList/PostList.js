@@ -1,10 +1,22 @@
 import Post from "./../../general/Post/Post";
 import Card from "./../../general/Card/Card";
 import AddEditPost from "./../../general/AddEditPost/AddEditPost";
-import React, { useState } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 
 const PostList = () => {
   const [ posts, setPosts ] = useState([]); 
+
+  useEffect(async () => {
+    // fetch('https://jsonplaceholder.typicode.com/posts')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     setPosts(data); 
+    //   })
+
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts'); 
+    const data = await response.json(); 
+    setPosts(data); 
+  }, [])
 
   const addPost = (p) => {
     setPosts((posts) => [p, ...posts]); 
