@@ -1,5 +1,5 @@
 import './AddEditPost.scss'; 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const AddEditPost = (props) => {
 
@@ -42,7 +42,7 @@ const AddEditPost = (props) => {
     }
 
     return (
-        <div>
+        <React.Fragment>
             <form onSubmit={submitHandler}>
                 <div className="form-group">
                     <label>User</label>
@@ -66,7 +66,7 @@ const AddEditPost = (props) => {
                 </div>
             </form>
             <hr />
-        </div>
+        </React.Fragment>
     );
 }
 export default AddEditPost; 
