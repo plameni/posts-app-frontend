@@ -16,7 +16,7 @@ const Post = (props) => {
     <div className="post-div" style={ { height: postHeight, borderRadius: borderRadius } }>
       <h4> {title} </h4>
       <p> {props.postData.body} </p>
-      <small>{props.postData.userId}</small> <small> {props.postData.id} </small>
+      <small>USER ID: {props.postData.userId}</small> <small> ID: {props.postData.id} </small>
       <button onClick={buttonClickHandler}>Mark as read</button>
     </div>
   );

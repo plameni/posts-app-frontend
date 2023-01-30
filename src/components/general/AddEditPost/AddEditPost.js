@@ -1,7 +1,7 @@
 import './AddEditPost.scss'; 
 import { useState } from 'react';
 
-const AddEditPost = () => {
+const AddEditPost = (props) => {
 
     // const [ title, setTitle ] = useState('');
     // const [ body, setBody ] = useState(''); 
@@ -30,12 +30,15 @@ const AddEditPost = () => {
         }}); 
     }
 
-    const [ post, setPost ] = useState({ title: '', body: '', userId: '1' }); 
+    const [ post, setPost ] = useState({ id: Math.round(Math.random() * 1000), title: '', body: '', userId: '1' }); 
 
     const submitHandler = (ev) => {
         ev.preventDefault(); 
+        // uneseni su podaci 
+        // ovaj post treba da posaljemo "glavnoj" komponenti (parent)
 
-        console.log(post);  
+        props.onSubmitPost(post); 
+        setPost({ id: Math.round(Math.random() * 1000), title: '', body: '', userId: '1' }); 
     }
 
     return (
