@@ -1,30 +1,28 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Login = (props) => {
-
-    const [ username, setUsername ] = useState('');
-    const [ password, setPassword ] = useState(''); 
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     const changeUsernameHandler = (ev) => {
-        setUsername(ev.target.value); 
-    }
+        setUsername(ev.target.value);
+    };
 
     const changePasswordHandler = (ev) => {
-        setPassword(ev.target.value); 
-    }
+        setPassword(ev.target.value);
+    };
 
     const onLoginSubmitted = (ev) => {
-        ev.preventDefault(); 
+        ev.preventDefault();
         if (username === 'admin' && password === 'admin') {
             localStorage.setItem('post-app', 'token');
-            props.onSuccessfulLogin(); 
+            props.onSuccessfulLogin();
+        } else {
+            alert('Wrong credentials!');
         }
-        else {
-            alert("Wrong credentials!"); 
-        }
-    }
+    };
 
-    return ( 
+    return (
         <React.Fragment>
             <form onSubmit={onLoginSubmitted}>
                 <div className="form-group">
@@ -41,7 +39,6 @@ const Login = (props) => {
             </form>
         </React.Fragment>
     );
+};
 
-}
-
-export default Login; 
+export default Login;

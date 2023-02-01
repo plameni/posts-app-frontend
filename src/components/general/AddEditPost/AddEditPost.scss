@@ -1,7 +1,8 @@
 @import './../../../style/colors';
 
-.btn-magenta, .btn-magenta:hover {
+.btn-magenta,
+.btn-magenta:hover {
     background-color: $primary !important;
-    border: 1px solid $secondary !important; 
+    border: 1px solid $secondary !important;
     cursor: pointer;
 }
