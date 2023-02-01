@@ -30,7 +30,7 @@ const AddEditPost = (props) => {
         }}); 
     }
 
-    const [ post, setPost ] = useState({ id: Math.round(Math.random() * 1000), title: '', body: '', userId: '1' }); 
+    const [ post, setPost ] = useState({ title: '', body: '', userId: '1' }); 
 
     const submitHandler = (ev) => {
         ev.preventDefault(); 
@@ -38,7 +38,7 @@ const AddEditPost = (props) => {
         // ovaj post treba da posaljemo "glavnoj" komponenti (parent)
 
         props.onSubmitPost(post); 
-        setPost({ id: Math.round(Math.random() * 1000), title: '', body: '', userId: '1' }); 
+        setPost({ title: '', body: '', userId: '1' }); 
     }
 
     return (
